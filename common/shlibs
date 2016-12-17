@@ -2793,3 +2793,9 @@ libatksharpglue-3.so gtk-sharp-3.20.4_1
 libgtksharpglue-3.so gtk-sharp-3.20.4_1
 libgiosharpglue-3.so gtk-sharp-3.20.4_1
 libpangosharpglue-3.so gtk-sharp-3.20.4_1
+libpangosharpglue-2.so gtk-sharp2-2.12.42_1
+libatksharpglue-2.so gtk-sharp2-2.12.42_1
+libgladesharpglue-2.so gtk-sharp2-2.12.42_1
+libglibsharpglue-2.so gtk-sharp2-2.12.42_1
+libgtksharpglue-2.so gtk-sharp2-2.12.42_1
+libgdksharpglue-2.so gtk-sharp2-2.12.42_1
