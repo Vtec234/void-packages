@@ -1,0 +1,26 @@
+# Template file for 'fsharp'
+pkgname=fsharp
+version=4.0.1.20
+revision=1
+only_for_archs="x86_64 i686"
+lib32disabled=yes
+build_style=gnu-configure
+hostmakedepends="autoconf automake pkg-config"
+makedepends="mono"
+depends="mono"
+short_desc="F# compiler, core library and tools"
+maintainer="Simon THOBY <simonthoby@live.fr>"
+license="Apache-2.0"
+homepage="http://fsharp.org"
+distfiles="https://github.com/fsharp/fsharp/archive/4.0.1.20.tar.gz"
+checksum=380fe581d1ad99e32c8dc5974c764d90681f31dcbb1c67eb43870f524a9d0209
+
+# build seems broken so far on musl
+case "$XBPS_TARGET_MACHINE" in
+	*-musl) broken="https://s3.amazonaws.com/archive.travis-ci.org/jobs/184828977/log.txt"
+esac
+
+# I'm afraid fsharp uses the Internet to fetch NuGet packages during the build process.
+pre_configure() {
+	./autogen.sh
+}
