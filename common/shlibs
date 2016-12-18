@@ -2768,3 +2768,4 @@ libnma.so.0 libnm-gtk-1.4.0_1
 libgspell-1.so.1 gspell-1.0.0_1
 libotf.so.0 libotf-0.9.13_1
 libostree-1.so.1 ostree-2016.15_1
+libflatpak.so.0 flatpak-0.8.0_1

@@ -1,0 +1,28 @@
+# Template file for 'flatpak'
+pkgname=flatpak
+version=0.8.0
+revision=1
+build_style=gnu-configure
+hostmakedepends="pkg-config xmlto"
+makedepends="ostree ostree-devel libcap-devel libglib-devel libarchive-devel libsoup-devel polkit-devel libXau-devel fuse-devel json-glib-devel libseccomp-devel glib-devel"
+depends="ostree"
+short_desc="Linux application sandboxing and distribution framework"
+maintainer="Simon THOBY <simonthoby@live.fr>"
+license="LGPL-2.1"
+homepage="http://flatpak.org/"
+distfiles="https://github.com/${pkgname}/${pkgname}/releases/download/${version}/${pkgname}-${version}.tar.xz"
+checksum=5b082065c9921308305845f99b0facbc9b85a93e3d7553fd238824190294aacd
+
+post_install() {
+	# Delete systemd parts
+	rm -rf $DESTDIR/etc/dbus-1
+	rm -rf $DESTDIR/usr/lib/systemd
+}
+
+flatpak-devel_package() {
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove /usr/lib/pkgconfig
+		vmove /usr/include
+	}
+}
