@@ -1,0 +1,21 @@
+# Template file for 'ostree'
+pkgname=ostree
+version=2016.15
+revision=1
+build_style=gnu-configure
+hostmakedepends="bison pkg-config"
+makedepends="libarchive-devel libglib-devel e2fsprogs-devel gpgme-devel fuse-devel liblzma-devel libsoup-devel"
+short_desc="Operating system and container binary deployment and upgrades"
+maintainer="Simon THOBY <simonthoby@live.fr>"
+license="GPL-2"
+homepage="https://ostree.readthedocs.io/en/latest/"
+distfiles="https://github.com/ostreedev/${pkgname}/releases/download/v${version}/${pkgname}-${version}.tar.xz"
+checksum=430178680bd0842dcfab66b780324f9e3cfa460799eec53166fa069e3396ecbd
+
+ostree-devel_package() {
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove /usr/include
+		vmove /usr/lib/pkgconfig
+	}
+}
