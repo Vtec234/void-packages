@@ -2788,3 +2788,8 @@ libmutter-cogl-path.so mutter-3.22.0_1
 libmutter-cogl.so mutter-3.22.0_1
 libgeoclue-2.so.0 geoclue2-2.4.4_1
 libgepub.so.0 libgepub-0.4_1
+libmono-profiler-gui-thread-check.so.0 gtk-sharp-3.20.4_1
+libatksharpglue-3.so gtk-sharp-3.20.4_1
+libgtksharpglue-3.so gtk-sharp-3.20.4_1
+libgiosharpglue-3.so gtk-sharp-3.20.4_1
+libpangosharpglue-3.so gtk-sharp-3.20.4_1
