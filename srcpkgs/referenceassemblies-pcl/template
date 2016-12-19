@@ -1,0 +1,26 @@
+# Template file for 'referenceassemblies-pcl'
+pkgname=referenceassemblies-pcl
+version=2014.04.14
+revision=1
+repository=nonfree
+wrksrc="PortableReferenceAssemblies-2014-04-14"
+hostmakedepends="wget"
+short_desc=".NET Portable Class Library Reference Assemblies installation"
+maintainer="Simon THOBY <simonthoby@live.fr>"
+license="EULA"
+homepage="https://msdn.microsoft.com/library/gg597391.aspx"
+distfiles="http://download.mono-project.com/repo/debian/pool/main/r/referenceassemblies-pcl/referenceassemblies-pcl_2014.04.14.orig.tar.bz2"
+checksum="f88305669a05657dbce32d5011d6d6d8d24f0dae925e6dac04905fecd6de0530"
+
+pre_configure() {
+	wget https://github.com/directhex/xamarin-referenceassemblies-pcl/blob/centos/EULA.rtf
+}
+
+do_install() {
+	vmkdir usr/lib/mono/xbuild-frameworks/.NETPortable
+	vcopy v4.* usr/lib/mono/xbuild-frameworks/.NETPortable/
+}
+
+pre_install() {
+	vlicense ${wrksrc}/EULA.rtf
+}
